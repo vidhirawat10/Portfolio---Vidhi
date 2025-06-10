@@ -1,5 +1,6 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
+# My Portfolio - Vidhi
+
+This is the personal portfolio website for Vidhi, showcasing my projects, skills, and educational background.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -69,6 +70,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# Portfolio---main
->>>>>>> c4b5e7bcc5eb2e01994b6e6197862fd1a9fe0473
