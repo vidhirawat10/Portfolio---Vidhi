@@ -1,0 +1,179 @@
+/* src/components/SkillsPage.css */
+
+.skillspage-main {
+  position: relative;
+  min-height: 100vh; /* Ensures it takes at least one full viewport height */
+  overflow: hidden; /* Important for containing background elements like stars */
+  background-color: #0a151f; /* Same dark background color as other sections */
+  display: flex;
+  flex-direction: column; /* Stacks content vertically */
+  align-items: center; /* Centers content horizontally */
+  justify-content: center; /* Centers content block vertically on the page */
+  color: white; /* Default text color for the section */
+  padding: 20px; /* Overall padding for the section */
+  box-sizing: border-box; /* Include padding in the element's total size */
+}
+
+/* Wrapper for main content to control max-width and internal padding */
+.skills-content-wrapper {
+  text-align: center;
+  max-width: 1200px; /* Allows for a wider layout than the About section */
+  padding: 0px;
+  z-index: 2; /* Ensures content is above the falling stars */
+  width: 100%; /* Ensures it takes full width within max-width */
+  box-sizing: border-box;
+}
+
+/* Main heading "Skills & Technologies" */
+.skills-main-heading {
+  font-size: 3.5em;
+  color: #e9e7e7;
+  margin-bottom: 10px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Subtle text shadow */
+}
+
+/* Sub-heading "A COMPREHENSIVE TOOLKIT..." */
+.skills-sub-heading {
+  font-size: 1.1em;
+  color: #92e0be; /* Accent color */
+  margin-bottom: 50px; /* Space below sub-heading */
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Grid container for individual skill categories */
+.skills-category-grid {
+  display: grid;
+  /* Responsive grid:
+     - Columns auto-adjust to fit available space.
+     - Each column is at least 300px wide.
+     - They grow to take equal fractions of remaining space. */
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+  gap: 30px; /* Space between category cards */
+  justify-content: center; /* Centers cards horizontally if they don't fill a row */
+  align-items: stretch; /* Makes all cards in a row the same height */
+}
+
+/* Individual skill category card (e.g., Programming Languages) */
+.skill-category-card {
+  background-color: #1e293b; /* Semi-transparent dark background */
+  border-radius: 30px;
+  height: 165px;
+  padding: 25px;
+  text-align: left; /* Content inside card aligns to the left */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+  display: flex;
+  flex-direction: column; /* Stacks icon, title, and tags vertically */
+}
+
+.skill-category-card:hover {
+  transform: translateY(-5px); /* Lifts card on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Stronger shadow on hover */
+}
+
+/* Title of the skill category */
+.category-title {
+  font-size: 1.4em;
+  color: #92e0be; /* Accent color */
+  margin-top: 0;
+  margin-bottom: 20px;
+  display: flex; /* Allows icon and text to be side-by-side */
+  align-items: center;
+  gap: 10px; /* Space between icon and text */
+}
+
+.category-icon {
+  font-size: 1em; /* Adjust icon size relative to the title text */
+}
+
+/* Container for individual skill tags */
+.skill-items {
+  display: flex;
+  flex-wrap: wrap; /* Allows tags to wrap to the next line */
+  gap: 10px; /* Space between individual skill tags */
+}
+
+/* Individual skill tag (e.g., "Python") */
+.skill-item-tag {
+  background-color: #1a1a2e; /* Light green background with transparency */
+  color: #2dd4bf; /* Green text */
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-size: 0.8em;
+  font-weight: 500;
+  border: 1px solid rgba(146, 224, 190, 0.4); /* Subtle border */
+  border-radius: 20px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.skill-item-tag:hover {
+  background-color: #1a1a2e;
+  transform: translateY(-2px); /* Lift tag on hover */
+}
+
+/* --- Media Queries for Responsiveness --- */
+
+@media (max-width: 1024px) {
+  .skills-main-heading {
+    font-size: 3em;
+  }
+  .skills-sub-heading {
+    font-size: 1em;
+  }
+  .skills-category-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-main-heading {
+    font-size: 2.5em;
+  }
+  .skills-sub-heading {
+    font-size: 0.9em;
+    margin-bottom: 30px;
+  }
+  .skills-category-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 2 columns on tablets */
+    gap: 20px;
+  }
+  .skill-category-card {
+    padding: 20px;
+  }
+  .category-title {
+    font-size: 1.5em;
+  }
+  .skill-item-tag {
+    font-size: 0.9em;
+    padding: 7px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-main-heading {
+    font-size: 2em;
+  }
+  .skills-sub-heading {
+    font-size: 0.8em;
+    margin-bottom: 20px;
+  }
+  .skills-category-grid {
+    grid-template-columns: 1fr; /* Single column on very small screens */
+    gap: 15px;
+  }
+  .skill-category-card {
+    padding: 15px;
+  }
+  .category-title {
+    font-size: 1.3em;
+  }
+  .skill-item-tag {
+    font-size: 0.85em;
+    padding: 6px 10px;
+  }
+  .skills-content-wrapper {
+    padding: 10px;
+  }
+}

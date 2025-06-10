@@ -20,7 +20,7 @@ function LoadingPage({ onLoadingComplete }) {
   
   useEffect(() => {
     
-    const greetingsDisplayDuration = 3000; 
+    const greetingsDisplayDuration = 2500; 
 
     
     const pageAnimationDuration = 1000; 

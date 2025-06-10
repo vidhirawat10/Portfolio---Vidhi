@@ -1,0 +1,41 @@
+/* src/components/FallingStars.css */
+
+.falling-stars-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* This correctly clips stars outside its boundaries */
+  pointer-events: none;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  background-color: rgb(224, 215, 215); /* Color of the stars */
+  border-radius: 50%; /* Makes them circular */
+  top: -5px; /* Stars start slightly above the container's top edge */
+
+  animation-name: fallAndFade;
+  animation-timing-function: linear; /* Constant speed */
+  animation-iteration-count: infinite; /* Loop indefinitely */
+}
+
+/* Keyframes for the falling and fading animation */
+@keyframes fallAndFade {
+  0% {
+    transform: translateY(0) rotate(0deg); /* Start at the top, no rotation */
+    opacity: 0; /* Star is invisible at the very beginning of its cycle */
+  }
+  5% { /* NEW: Star becomes fully opaque very early in its journey */
+    opacity: 1; 
+  }
+  95% { /* NEW: Star remains fully opaque almost until the very end */
+    opacity: 1; 
+  }
+  100% {
+    transform: translateY(calc(100% + 1000px)) rotate(360deg); /* Fall past the bottom of the container, rotate */
+    opacity: 0; /* Fade out just as it leaves the bottom */
+  }
+}

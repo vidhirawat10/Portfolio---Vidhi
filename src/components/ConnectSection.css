@@ -1,0 +1,217 @@
+/* src/components/ConnectSection.css */
+
+.connect-section-main {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: #0a151f; /* Consistent dark background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center content vertically */
+  padding: 60px 20px;
+  box-sizing: border-box;
+  color: white;
+}
+
+.connect-content-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Heading styles */
+.connect-main-heading {
+  font-family: 'Georgia', serif;
+  font-size: 3.5em;
+  color: #e9e7e7;
+  margin-bottom: 50px; /* Space below heading */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+  letter-spacing: 1.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.connect-main-heading .heading-icon {
+  font-size: 1.2em;
+  color: #92e0be; /* Accent color for the icon */
+}
+
+/* Contact Card (the form block itself) */
+.contact-card {
+  background-color: #0a151f; /* Dark background for the card */
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Stronger shadow */
+  max-width: 550px; /* Adjusted max width for a single column form */
+  width: 100%;
+  color: #e9e7e7; /* Light text for dark background */
+  margin: 0 auto; /* NEW: Center the block horizontally */
+  border: 2px solid #92e0be; /* Green border to match image glow */
+  overflow: hidden; /* Ensure border-radius applies */
+}
+
+/* Removed .contact-illustration styles as the div is removed */
+.contact-illustration { /* Keep this empty block or remove if you delete the div entirely */
+    display: none;
+}
+
+.contact-form {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between form groups */
+  background-color: transparent; /* Form background is now transparent, inherits from card */
+  border-radius: 20px; /* Apply border-radius to the form itself now */
+}
+
+.form-group {
+  position: relative;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.input-with-icon {
+  display: flex;
+  align-items: center;
+  background-color: #0a151f; /* Light green background with transparency for inputs */
+  border-radius: 8px;
+  padding: 8px 15px;
+  border: 2px solid #92e0be; /* Subtle border for inputs */
+}
+
+.input-with-icon .icon {
+  font-size: 1.2em;
+  color: #92e0be; /* Green accent for icons */
+  margin-right: 10px;
+  width: 20px;
+  text-align: center;
+}
+
+.input-with-icon input,
+.input-with-icon textarea {
+  flex-grow: 1;
+  border: none;
+  background: transparent;
+  padding: 10px 0;
+  font-size: 1em;
+  color: #e9e7e7; /* White text for input */
+  outline: none;
+}
+
+.input-with-icon input::placeholder,
+.input-with-icon textarea::placeholder {
+  color: #c0c0c0; /* Lighter placeholder text */
+}
+
+.input-with-icon textarea {
+  resize: vertical;
+  min-height: 100px;
+  padding-top: 10px;
+}
+
+.input-with-icon.message-input {
+    align-items: flex-start;
+}
+
+.input-with-icon.message-input .msg-icon {
+    padding-top: 10px;
+}
+
+.submit-button {
+  background-color: #1e293b; /* A vibrant purple as per image */
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  align-self: center; /* Center the button within the form */
+  min-width: 150px; /* Ensure a decent size */
+}
+
+.submit-button .send-icon {
+  font-size: 1.1em;
+  color: white; /* Ensure send icon is white */
+}
+
+.submit-button:hover {
+  background-color: #5b0a94; /* Darker purple on hover */
+  transform: translateY(-2px);
+}
+
+
+/* --- Media Queries for Responsiveness --- */
+
+@media (max-width: 960px) {
+  .connect-main-heading {
+    font-size: 3em;
+  }
+  .contact-card {
+    max-width: 500px; /* Adjust max width */
+  }
+  .contact-form {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .connect-main-heading {
+    font-size: 2.5em;
+  }
+  .contact-card {
+    max-width: 90%; /* Allow wider on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .connect-main-heading {
+    font-size: 2em;
+    gap: 10px;
+    margin-bottom: 40px;
+  }
+  .connect-main-heading .heading-icon {
+    font-size: 1em;
+  }
+  .contact-card {
+    border-radius: 15px;
+  }
+  .contact-form {
+    padding: 25px;
+    gap: 15px;
+  }
+  .input-with-icon {
+    padding: 6px 12px;
+  }
+  .input-with-icon .icon {
+    font-size: 1em;
+    margin-right: 8px;
+  }
+  .input-with-icon input,
+  .input-with-icon textarea {
+    padding: 8px 0;
+    font-size: 0.9em;
+  }
+  .submit-button {
+    padding: 12px 25px;
+    font-size: 1em;
+  }
+}

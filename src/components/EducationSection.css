@@ -1,0 +1,304 @@
+/* src/components/EducationSection.css */
+
+.education-section-main {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: #0a151f; /* Consistent dark background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center content vertically */
+  padding: 60px 20px;
+  box-sizing: border-box;
+  color: white;
+}
+
+.education-content-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Heading styles, consistent with Projects section */
+.education-main-heading {
+  font-family: 'Georgia', serif;
+  font-size: 3.5em;
+  color: #e9e7e7;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+  letter-spacing: 1.5px;
+}
+
+.education-sub-heading {
+  font-size: 1.15em;
+  color: #c0c0c0;
+  margin-bottom: 60px; /* Space before the timeline */
+  line-height: 1.6;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- Timeline Specific Styles --- */
+.timeline {
+  position: relative;
+  width: 100%;
+  max-width: 900px; /* Max width for the timeline itself */
+  margin: 0 auto;
+  padding: 0px 0; /* Adjust padding for items */
+}
+
+/* The vertical line */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: #92e0be; /* Accent color for the line */
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+  border-radius: 2px;
+}
+
+.timeline-item {
+  padding: 10px 0;
+  position: relative;
+  width: 50%; /* Each item takes half the timeline width */
+  background-color: inherit;
+  display: flex; /* Use flex to align content and icon */
+  justify-content: flex-end; /* Default to right side alignment for icon */
+  align-items: center; /* Center icon vertically */
+}
+
+/* Align items to the left */
+.timeline-item.left {
+  left: -20px;
+  padding-right: 60px; /* Space for the line and icon */
+}
+
+/* Align items to the right */
+.timeline-item.right {
+  left: 45%; /* Pushes to the right side of the line */
+  padding-left: 60px; /* Space for the line and icon */
+}
+
+/* The actual content box */
+.timeline-content {
+  padding: 10px 15px;
+  background-color: #1e293b; /* Darker background for content box */
+  position: relative;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  text-align: left; /* Align text left within the box */
+  border: 1px solid #0a151f; /* Subtle border */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-20px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+/* Pointer from content box to the line */
+.timeline-item.left .timeline-content::after {
+  content: ' ';
+  height: 0;
+  position: absolute;
+  top: 25px; /* Adjust to align with the icon */
+  width: 0;
+  z-index: 1;
+  right: -15px; /* Half of border + gap */
+  border: medium solid #1a1a2e; /* Background color of content box */
+  border-width: 10px 0 10px 10px; /* Points right */
+  border-color: transparent transparent transparent #1a1a2e;
+}
+
+.timeline-item.right .timeline-content::after {
+  content: ' ';
+  height: 0;
+  position: absolute;
+  top: 25px; /* Adjust to align with the icon */
+  width: 0;
+  z-index: 1;
+  left: -15px; /* Half of border + gap */
+  border: medium solid #1a1a2e; /* Background color of content box */
+  border-width: 10px 10px 10px 0; /* Points left */
+  border-color: transparent #1a1a2e transparent transparent;
+}
+
+
+/* Icon on the timeline line */
+.timeline-icon {
+  position: absolute;
+  width: 40px; /* Size of the icon circle */
+  height: 40px;
+  border-radius: 50%;
+  background-color: #92e0be; /* Accent color for icon background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em; /* Size of the emoji icon */
+  color: #0a151f; /* Dark color for the icon itself */
+  z-index: 3; /* Ensure icon is above line and content */
+}
+
+.timeline-item.left .timeline-icon {
+  right: 10px; /* Half of icon width to center on the line */
+}
+
+.timeline-item.right .timeline-icon {
+  left: 15px; /* Half of icon width to center on the line */
+}
+
+
+.institution {
+  font-size: 1.5em;
+  color: #e9e7e7;
+  margin-bottom: 5px;
+  font-weight: bold;
+text-align: center;
+}
+
+.degree {
+  font-size: 1em;
+  color: #92e0be; /* Accent color */
+  margin-bottom: 5px;
+}
+
+.details {
+  font-size: 0.95em;
+  color: #c0c0c0;
+  margin-bottom: 15px;
+}
+
+.description {
+  font-size: 0.85em;
+  color: #c0c0c0;
+  line-height: 1.6;
+}
+
+
+/* --- Media Queries for Responsiveness --- */
+
+@media (max-width: 1024px) {
+  .education-main-heading {
+    font-size: 3.5em;
+  }
+  .education-sub-heading {
+    font-size: 1.05em;
+    margin-bottom: 50px;
+  }
+  .timeline {
+    max-width: 800px;
+  }
+  .timeline-content {
+    padding: 15px 25px;
+  }
+  .institution {
+    font-size: 1.4em;
+  }
+  .degree {
+    font-size: 1em;
+  }
+  .details {
+    font-size: 0.9em;
+  }
+  .description {
+    font-size: 0.85em;
+  }
+}
+
+/* Adjust timeline for smaller screens (single column) */
+@media (max-width: 768px) {
+  .education-main-heading {
+    font-size: 3em;
+    margin-bottom: 15px;
+  }
+  .education-sub-heading {
+    font-size: 1em;
+    margin-bottom: 30px;
+  }
+  
+  .timeline {
+    padding-top: 50px; /* Give space for the top item to not touch heading */
+    padding-bottom: 50px;
+  }
+
+  .timeline::after {
+    left: 25px; /* Move line to the left */
+  }
+
+  .timeline-item {
+    width: 100%; /* Full width */
+    padding-left: 65px; /* All items shift to the right of the new line position */
+    padding-right: 0;
+    justify-content: flex-start; /* Content starts from the left */
+  }
+
+  .timeline-item.left,
+  .timeline-item.right {
+    left: 0; /* Reset left positioning */
+  }
+
+  .timeline-item.left .timeline-content::after,
+  .timeline-item.right .timeline-content::after {
+    left: -15px; /* Pointers now always point left to the line */
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #1a1a2e transparent transparent;
+  }
+
+  .timeline-icon {
+    left: 0px; /* Center icon on the new line position */
+  }
+
+  .timeline-item.left .timeline-icon,
+  .timeline-item.right .timeline-icon {
+    left: 0px;
+  }
+
+  .timeline-content {
+    width: calc(100% - 65px); /* Adjust content width based on padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .education-main-heading {
+    font-size: 2.5em;
+  }
+  .education-sub-heading {
+    font-size: 0.85em;
+    margin-bottom: 20px;
+  }
+  .timeline::after {
+    left: 20px; /* Further adjust line position */
+  }
+  .timeline-item {
+    padding-left: 55px; /* Adjust padding */
+  }
+  .timeline-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5em;
+    left: 0px; /* Adjust icon position */
+  }
+  .timeline-item.left .timeline-icon,
+  .timeline-item.right .timeline-icon {
+    left: 0px;
+  }
+  .timeline-content {
+    padding: 15px 20px;
+    width: calc(100% - 55px);
+  }
+  .institution {
+    font-size: 1.3em;
+  }
+  .degree {
+    font-size: 0.9em;
+  }
+  .details, .description {
+    font-size: 0.8em;
+  }
+}

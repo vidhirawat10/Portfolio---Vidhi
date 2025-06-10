@@ -1,0 +1,336 @@
+/* src/components/AllProjectsPage.css */
+
+.all-projects-page-main {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: #0a151f; /* Consistent dark background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px; /* Overall padding for the section */
+  box-sizing: border-box;
+  color: white;
+}
+
+/* Optional: Logo link for the projects page (similar to HomePage) */
+.all-projects-logo-link {
+  position: absolute; /* Position relative to the main container */
+  top: 20px;
+  left: 20px;
+  text-decoration: none; /* Remove underline */
+  z-index: 10; /* Ensure it's above other content */
+}
+
+.all-projects-page-logo {
+  font-size: 2em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.all-projects-page-logo .logo-name {
+  color: #e9e7e7;
+}
+
+.all-projects-page-logo .logo-separator {
+  color: #e9e7e7;
+  margin: 0 5px;
+}
+
+.all-projects-page-logo .logo-portfolio {
+  color: #92e0be;
+}
+
+
+.all-projects-content-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+  z-index: 2; /* Ensures content is above the falling stars */
+  margin-top: 50px; /* Space for the fixed logo/back button */
+}
+
+.all-projects-main-heading {
+  font-family: 'Georgia', serif;
+  font-size: 4.5em;
+  color: #e9e7e7;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+  letter-spacing: 1.5px;
+}
+
+.all-projects-sub-heading {
+  font-size: 1.15em;
+  color: #c0c0c0;
+  margin-bottom: 50px; /* Space before filter buttons */
+  line-height: 1.6;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Filter Buttons Styling */
+.projects-filter-buttons {
+  display: flex;
+  flex-wrap: wrap; /* Allow buttons to wrap */
+  justify-content: center;
+  gap: 15px; /* Space between buttons */
+  margin-bottom: 50px; /* Space before project grid */
+  padding: 0 10px; /* Small padding to prevent touching edges on small screens */
+}
+
+.filter-button {
+  background-color: transparent;
+  color: #92e0be;
+  border: 2px solid #92e0be;
+  padding: 10px 25px;
+  border-radius: 25px; /* Pill-shaped buttons */
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  white-space: nowrap; /* Prevent text from wrapping inside button */
+}
+
+.filter-button:hover {
+  background-color: #92e0be;
+  color: #0a151f;
+  transform: translateY(-2px);
+}
+
+.filter-button.active {
+  background-color: #92e0be;
+  color: #0a151f;
+  border-color: #92e0be; /* Ensure border stays colored */
+  box-shadow: 0 0 15px rgba(146, 224, 190, 0.6); /* Add a glow to active button */
+}
+
+
+/* Project Grid Styling (similar to ProjectsSection.css, but for all projects) */
+.all-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background-color: #0a151f;
+  border-radius: 20px;
+  padding: 30px;
+  text-align: left;
+  box-shadow: 0 1px 10px #92e0be;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border 0.3s ease-in-out;
+  border: 1.5px solid #1a1a2e;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 350px; /* Ensure consistent card height */
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+  border: 1.5px solid #92e0be;
+}
+
+.project-title {
+  font-size: 1.7em;
+  color: #e9e7e7;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.project-description {
+  font-size: 1em;
+  color: #c0c0c0;
+  margin-bottom: 25px;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.project-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.tech-tag {
+  background-color: rgba(146, 224, 190, 0.1);
+  color: #92e0be;
+  padding: 7px 14px;
+  border-radius: 5px;
+  font-size: 0.85em;
+  font-weight: 500;
+  border: 1px solid rgba(146, 224, 190, 0.3);
+}
+
+.project-links {
+  display: flex;
+  gap: 20px;
+  margin-top: auto;
+}
+
+.project-link {
+  display: inline-block;
+  background-color: transparent;
+  color: #92e0be;
+  border: 2px solid #92e0be;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.95em;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  flex: 1;
+  text-align: center;
+}
+
+.project-link:hover {
+  background-color: #92e0be;
+  color: #0a151f;
+  border-color: #92e0be;
+}
+
+/* --- Media Queries for Responsiveness --- */
+
+@media (max-width: 1024px) {
+  .all-projects-main-heading {
+    font-size: 3.5em;
+  }
+  .all-projects-sub-heading {
+    font-size: 1.05em;
+    margin-bottom: 40px;
+  }
+  .projects-filter-buttons {
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+  .filter-button {
+    padding: 8px 20px;
+    font-size: 0.95em;
+  }
+  .all-projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+  }
+  .project-card {
+    padding: 25px;
+  }
+  .project-title {
+    font-size: 1.6em;
+  }
+  .project-description {
+    font-size: 0.95em;
+  }
+  .tech-tag {
+    font-size: 0.8em;
+    padding: 6px 12px;
+  }
+  .project-link {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 768px) {
+  .all-projects-page-main {
+    padding-top: 90px; /* More space for the logo */
+  }
+  .all-projects-logo-link {
+    top: 15px;
+    left: 15px;
+  }
+  .all-projects-page-logo {
+    font-size: 1.5em;
+  }
+  .all-projects-main-heading {
+    font-size: 3em;
+    margin-bottom: 15px;
+  }
+  .all-projects-sub-heading {
+    font-size: 1em;
+    margin-bottom: 30px;
+  }
+  .projects-filter-buttons {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+  .filter-button {
+    width: 80%; /* Make buttons wider */
+    max-width: 300px;
+  }
+  .all-projects-grid {
+    grid-template-columns: 1fr; /* Single column on tablets */
+    gap: 20px;
+  }
+  .project-card {
+    padding: 20px;
+    min-height: auto;
+  }
+  .project-title {
+    font-size: 1.5em;
+  }
+  .project-description {
+    font-size: 0.9em;
+  }
+  .project-links {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px;
+  }
+  .project-link {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .all-projects-page-main {
+    padding: 80px 10px 40px 10px;
+  }
+  .all-projects-logo-link {
+    top: 10px;
+    left: 10px;
+  }
+  .all-projects-page-logo {
+    font-size: 1.2em;
+  }
+  .all-projects-main-heading {
+    font-size: 2.5em;
+  }
+  .all-projects-sub-heading {
+    font-size: 0.85em;
+    margin-bottom: 20px;
+  }
+  .projects-filter-buttons {
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .filter-button {
+    font-size: 0.85em;
+    padding: 8px 15px;
+    width: 90%;
+  }
+  .project-card {
+    border-radius: 15px;
+    padding: 15px;
+  }
+  .project-title {
+    font-size: 1.3em;
+  }
+  .project-description {
+    font-size: 0.8em;
+  }
+  .project-tech-stack {
+    gap: 8px;
+  }
+  .tech-tag {
+    font-size: 0.75em;
+    padding: 5px 10px;
+  }
+  .project-link {
+    font-size: 0.8em;
+    padding: 10px 15px;
+  }
+}

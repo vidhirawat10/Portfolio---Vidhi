@@ -1,0 +1,179 @@
+/* src/components/AboutPage.css */
+
+.aboutpage-main {
+  position: relative;
+  min-height: 100vh; /* Ensures it takes at least one full viewport height */
+  overflow: hidden; /* Important for containing background elements */
+  background-color: #0a151f; /* Dark background color */
+  display: flex;
+  flex-direction: column; /* Stack header and content vertically */
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content block vertically */
+  color: white; /* Default text color for the section */
+  padding: 20px; /* Overall padding for the section */
+  box-sizing: border-box; /* Include padding in the element's total size */
+}
+
+/* Main content wrapper for 'Hi There', Name, and Description */
+.about-content-wrapper {
+  text-align: center;
+  max-width: 900px; /* Limits the width of text for readability */
+  padding: 20px;
+  margin-top: 80px; /* Space from the top header */
+  margin-bottom: 50px; /* Space before the skills grid */
+  z-index: 2; /* Ensures content is above the falling stars */
+}
+
+.about-greeting {
+  font-size: 1.5em;
+  color: #92e0be; /* Accent color */
+  margin-bottom: 10px;
+}
+
+.about-name {
+  font-size: 3.5em; /* Large font size for the name */
+  color: #e9e7e7;
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); /* Subtle shadow for depth */
+}
+
+.about-description {
+  font-size: 1.1em;
+  line-height: 1.7; /* Improved readability */
+  color: #c0c0c0; /* Slightly lighter text color */
+  margin-bottom: 40px;
+}
+
+/* Styles for the Skill Cards Grid */
+.skills-grid {
+  display: grid;
+  /* Creates a responsive grid: 
+     - Columns automatically adjust to fit,
+     - Each column is at least 200px wide,
+     - Max 1 fraction of available space (so they grow evenly) */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px; /* Space between grid items */
+  width: 100%;
+  max-width: 1200px; /* Max width for the entire grid */
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 0 0px; /* Padding on sides of the grid */
+  box-sizing: border-box;
+}
+
+.skill-card {
+  background-color: #1a1a2e; /* Semi-transparent dark background */
+  border-radius: 10px;
+  padding: 25px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  transition: border 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+  min-height: 100px; /* Ensures cards have a consistent minimum height */
+}
+
+.skill-card:hover {
+  transform: scale(1.06); /* Lift card on hover */
+  border: 2px solid #92e0be;
+}
+
+.skill-icon {
+  font-size: 3em; /* Size for emoji/text icons */
+  margin-bottom: 15px;
+  color: #92e0be; /* Accent color for icons */
+}
+
+.skill-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #e9e7e7;
+}
+
+/* --- Media Queries for Responsiveness --- */
+
+@media (max-width: 1200px) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Adjust card size */
+  }
+}
+
+@media (max-width: 900px) {
+  .about-name {
+    font-size: 3em;
+  }
+  .about-description {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutpage-logo {
+    font-size: 1.5em;
+  }
+  .about-nav-link {
+    font-size: 1em;
+  }
+  .about-greeting {
+    font-size: 1.2em;
+  }
+  .about-name {
+    font-size: 2.5em;
+  }
+  .about-description {
+    font-size: 0.9em;
+  }
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Further adjust card size */
+    gap: 15px;
+  }
+  .skill-card {
+    padding: 20px;
+    min-height: 120px;
+  }
+  .skill-icon {
+    font-size: 2.5em;
+  }
+  .skill-title {
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutpage-logo {
+    font-size: 1.2em;
+  }
+  .about-nav-link {
+    font-size: 0.9em;
+  }
+  .about-content-wrapper {
+    margin-top: 60px;
+    padding: 10px;
+  }
+  .about-greeting {
+    font-size: 1em;
+  }
+  .about-name {
+    font-size: 2em;
+  }
+  .about-description {
+    font-size: 0.85em;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr; /* Single column for very small screens */
+    gap: 10px;
+    padding: 0 10px;
+  }
+  .skill-card {
+    padding: 15px;
+    min-height: 100px;
+  }
+  .skill-icon {
+    font-size: 2em;
+  }
+  .skill-title {
+    font-size: 1em;
+  }
+}

@@ -1,0 +1,259 @@
+/* src/components/ProjectsSection.css */
+
+.projects-section-main {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: #0a151f; /* Keep consistent dark background */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  box-sizing: border-box;
+  color: white;
+}
+
+.projects-content-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+  /* Removed top/bottom padding as they are handled by main section padding */
+}
+
+/* NEW: Main heading "Projects" */
+.projects-main-heading {
+  font-family: 'Georgia', serif; /* Use a serif font as per image */
+  font-size: 3.5em; /* Larger font size */
+  color: #e9e7e7;
+  margin-bottom: 20px; /* Space between heading and sub-heading */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+  letter-spacing: 1.5px;
+}
+
+/* NEW: Sub-heading below "Projects" */
+.projects-sub-heading {
+  font-size: 1.15em;
+  color: #c0c0c0; /* Slightly lighter text for description */
+  margin-bottom: 60px; /* More space before project grid */
+  line-height: 1.6;
+  max-width: 800px; /* Limit width for readability */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted minmax for better fit */
+  gap: 30px; /* Space between project cards */
+  margin-bottom: 60px; /* Space before View More button */
+}
+
+.project-card {
+  background-color: #0a151f; /* Very dark background as per image */
+  border-radius: 20px; /* More rounded corners */
+  padding: 30px; /* Increased padding */
+  text-align: left; /* Align text left inside card */
+  box-shadow: 0 2px 10px #92e0be; /* Stronger shadow */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border 0.3s ease-in-out;
+  border: 1.5px solid #1a1a2e; /* Subtle border to start with */
+  display: flex; /* Use flexbox for internal layout */
+  flex-direction: column; /* Stack content vertically */
+  justify-content: space-between; /* Push buttons to bottom */
+  min-height: 350px; /* Ensure consistent card height for visual appeal */
+}
+
+.project-card:hover {
+  transform: translateY(-8px); /* More pronounced lift on hover */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7); /* Even stronger shadow */
+  border: 1.5px solid #92e0be; /* Glow effect on border */
+}
+
+/* Removed .project-image styles as per new design */
+
+.project-title {
+  font-size: 1.7em; /* Larger title font */
+  color: #e9e7e7; /* White title */
+  margin-top: 0;
+  margin-bottom: 15px; /* Space after title */
+}
+
+.project-description {
+  font-size: 1em;
+  color: #c0c0c0;
+  margin-bottom: 25px; /* Space after description */
+  line-height: 1.6;
+  flex-grow: 1; /* Allows description to take up available space, pushing links down */
+}
+
+/* NEW: Tech Stack container */
+.project-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Space between tags */
+  margin-bottom: 30px; /* Space after tech stack */
+}
+
+/* NEW: Individual tech tag */
+.tech-tag {
+  background-color: rgba(146, 224, 190, 0.1); /* Light green background with transparency */
+  color: #92e0be; /* Green text */
+  padding: 7px 14px;
+  border-radius: 5px;
+  font-size: 0.85em;
+  font-weight: 500;
+  border: 1px solid rgba(146, 224, 190, 0.3); /* Subtle border for tags */
+}
+
+
+.project-links {
+  display: flex;
+  gap: 20px; /* More space between buttons */
+  margin-top: auto; /* Push buttons to the bottom of the card */
+}
+
+.project-link {
+  display: inline-block;
+  background-color: transparent; /* Transparent background */
+  color: #92e0be; /* Green text */
+  border: 2px solid #92e0be; /* Green border */
+  padding: 12px 25px; /* Larger padding for buttons */
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.95em;
+  font-weight: 600; /* Bolder text */
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  flex: 1; /* Make buttons take equal space */
+  text-align: center;
+}
+
+.project-link:hover {
+  background-color: #92e0be; /* Green background on hover */
+  color: #0a151f; /* Dark text on hover */
+  border-color: #92e0be; /* Keep border color consistent on hover */
+}
+
+.view-more-button {
+  background-color: transparent;
+  color: #92e0be;
+  border: 2px solid #92e0be;
+  padding: 15px 40px; /* Larger button */
+  border-radius: 10px;
+  font-size: 1.1em; /* Larger text */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-top: 20px; /* Space from the grid above */
+}
+
+.view-more-button:hover {
+  background-color: #92e0be;
+  color: #0a151f;
+}
+
+/* --- Media Queries for Responsiveness --- */
+
+@media (max-width: 1024px) {
+  .projects-main-heading {
+    font-size: 3.5em;
+  }
+  .projects-sub-heading {
+    font-size: 1.05em;
+    margin-bottom: 50px;
+  }
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+  }
+  .project-card {
+    padding: 25px;
+  }
+  .project-title {
+    font-size: 1.6em;
+  }
+  .project-description {
+    font-size: 0.95em;
+  }
+  .tech-tag {
+    font-size: 0.8em;
+    padding: 6px 12px;
+  }
+  .project-link {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-main-heading {
+    font-size: 3em;
+    margin-bottom: 15px;
+  }
+  .projects-sub-heading {
+    font-size: 1em;
+    margin-bottom: 40px;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr; /* Single column on tablets */
+    gap: 20px;
+  }
+  .project-card {
+    padding: 20px;
+    min-height: auto; /* Allow height to adjust on smaller screens */
+  }
+  .project-title {
+    font-size: 1.5em;
+  }
+  .project-description {
+    font-size: 0.9em;
+  }
+  .project-links {
+    flex-direction: column; /* Stack buttons vertically */
+    gap: 10px;
+  }
+  .project-link {
+    width: 100%; /* Full width buttons when stacked */
+  }
+  .view-more-button {
+    padding: 12px 30px;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-main-heading {
+    font-size: 2.5em;
+  }
+  .projects-sub-heading {
+    font-size: 0.85em;
+    margin-bottom: 30px;
+  }
+  .project-card {
+    border-radius: 15px;
+    padding: 15px;
+  }
+  .project-title {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+  }
+  .project-description {
+    font-size: 0.8em;
+    margin-bottom: 20px;
+  }
+  .project-tech-stack {
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .tech-tag {
+    font-size: 0.75em;
+    padding: 5px 10px;
+  }
+  .project-link {
+    font-size: 0.8em;
+    padding: 10px 15px;
+  }
+  .view-more-button {
+    padding: 10px 25px;
+    font-size: 0.9em;
+  }
+}

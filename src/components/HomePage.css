@@ -1,0 +1,111 @@
+/* src/components/HomePage.css */
+
+/* Main container for the homepage content */
+.homepage-main {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* Styles for the stars canvas background */
+#stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+  background-color: #0a151f;
+}
+
+/* Container for the two main sections (left and right) */
+.homepage-sections {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  position: relative; /* Important for absolute positioning of .dot-grid */
+  z-index: 1;
+  flex-direction: row; /* Keep left and right sections side-by-side */
+}
+
+/* Styling for the left section */
+.left-section {
+  flex: 1;
+  background-color: #1a1a2e;
+  display: flex;
+  flex-direction: column; /* Changed to column to stack content */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  position: relative; /* Needed for absolute positioning of children if any, or for z-index context */
+  padding: 20px; /* Add some padding to prevent content from touching edges */
+  overflow: hidden; /* Important for absolute positioning of content within */
+}
+
+/* Styling for the right section */
+.right-section {
+  flex: 1;
+  background-color: #0a151f;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px;
+  position: relative; /* ADD THIS LINE: Crucial for absolute positioning of stars */
+}
+
+/* Styles for the logo */
+.homepage-logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 2em; /* Default font size */
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  z-index: 10; /* Ensures logo is above the dot grid */
+}
+
+.homepage-logo .logo-name {
+  color: #e9e7e7;
+}
+
+.homepage-logo .logo-separator {
+  color: #e9e7e7;
+  margin: 0 5px;
+}
+
+.homepage-logo .logo-portfolio {
+  color: #92e0be;
+}
+
+/* --- Media Queries for Responsive Logo Font Size (from previous iteration, still relevant) --- */
+
+@media (max-width: 1024px) {
+  .homepage-logo {
+    font-size: 1.8em;
+    top: 15px;
+    left: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .homepage-logo {
+    font-size: 1.5em;
+    top: 10px;
+    left: 10px;
+  }
+  /* Ensure main sections are still side-by-side */
+  .homepage-sections {
+    flex-direction: row; /* Explicitly keep them side-by-side */
+  }
+}
+
+@media (max-width: 480px) {
+  .homepage-logo {
+    font-size: 1.1em;
+    top: 5px;
+    left: 5px;
+  }
+}

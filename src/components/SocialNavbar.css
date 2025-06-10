@@ -1,0 +1,54 @@
+/* src/components/SocialNavbar.css */
+
+.social-navbar {
+    height: 100%; /* Take full height of its parent (right-section) */
+    display: flex;
+    align-items: center; /* Center the list vertically within the navbar area */
+    justify-content: flex-end; /* Push content to the right */
+    padding-right: 30px; /* Adjust spacing from the right edge of the container */
+    position: relative; /* For absolute positioning if needed, though flexbox is enough here */
+    z-index: 2; /* Ensure it's above other potential elements */
+}
+
+.social-links {
+    list-style: none; /* Remove bullet points from the list */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 25px; /* Space between each icon */
+    background-color: #0a151f; /* Semi-transparent dark background for the bar */
+    padding: 30px 15px; /* Padding inside the bar (top/bottom, left/right) */
+    border: 2px solid rgb(88, 86, 86);
+    border-radius: 10px; /* Slightly rounded corners for the bar */
+}
+
+.social-links li {
+    display: flex; /* Ensures the icon is centered within its list item */
+    justify-content: center;
+    align-items: center;
+}
+
+.social-links a {
+    color: white; /* Default color for icons */
+    font-size: 2em; /* Size of the icons */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+    display: flex; /* Ensure the link itself is a flex container for centering */
+    justify-content: center;
+    align-items: center;
+    width: 40px; /* Fixed width/height for the clickable area */
+    height: 40px;
+    border-radius: 50%; /* Make the background circular on hover */
+    background-color: transparent; /* Default transparent background */
+}
+
+.social-links a:hover {
+    color: #c2f7e0; /* Hover color for icons */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    background-color: rgba(255, 255, 255, 0.1); /* Slight background on hover */
+}
+
+.social-icon {
+    /* Specific styles for the actual React Icon SVG */
+    display: block; /* Ensures the SVG behaves as a block element */
+}
