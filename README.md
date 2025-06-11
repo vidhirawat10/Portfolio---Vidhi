@@ -1,4 +1,4 @@
-h1 align="center">👩‍💻 Vidhi Rawat - Portfolio Website 💫</h1>
+<h1 align="center">👩‍💻 Vidhi Rawat - Portfolio Website 💫</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Status-Live-green?style=for-the-badge" />
