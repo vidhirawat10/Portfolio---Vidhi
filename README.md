@@ -22,3 +22,13 @@ Hey there! I'm **Vidhi Rawat**, a passionate:
 - 💡 Dreaming to become a **Data Scientist / ML Engineer**
 
 ---
+
+## 🌟 Features
+
+- 📌 Smooth Scroll Navigation
+- 🧠 AI/ML Projects with Case Studies
+- 💼 Resume & Experience Showcase
+- 📱 Fully Responsive Design
+- 🎨 Minimal yet Elegant UI
+
+---
