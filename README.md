@@ -10,3 +10,15 @@
 </p>
 
 ---
+
+## 💡 About Me
+
+Hey there! I'm **Vidhi Rawat**, a passionate:
+
+- 📊 Data Science & Machine Learning Enthusiast  
+- 🌐 Full Stack Web Developer  
+- 🏆 Winner of Smart India Hackathon 2023  
+- 🎓 Computer Science student  
+- 💡 Dreaming to become a **Data Scientist / ML Engineer**
+
+---
