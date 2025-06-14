@@ -32,3 +32,16 @@ Hey there! I'm **Vidhi Rawat**, a passionate:
 - 🎨 Minimal yet Elegant UI
 
 ---
+
+## 📸 Sections
+- 🏠 Home - Quick intro & call-to-action
+
+- 👩‍🎓 About Me - My journey, education & goals
+
+- 💻 Projects - Real-world ML & Web Dev showcases
+
+- 🧠 Skills - Tools, languages & frameworks
+
+- 📨 Contact - Get in touch with me!
+  
+---
