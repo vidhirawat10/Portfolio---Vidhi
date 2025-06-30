@@ -59,7 +59,7 @@
 .skill-category-card {
   background-color: #1e293b; /* Semi-transparent dark background */
   border-radius: 30px;
-  height: 210px;
+  height: 220px;
   padding: 25px;
   text-align: left; /* Content inside card aligns to the left */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
