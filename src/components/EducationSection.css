@@ -232,7 +232,7 @@ text-align: center;
   }
 
   .timeline-item {
-    width: 100%; /* Full width */
+    width: 85%; /* Full width */
     padding-left: 65px; /* All items shift to the right of the new line position */
     padding-right: 0;
     justify-content: flex-start; /* Content starts from the left */
