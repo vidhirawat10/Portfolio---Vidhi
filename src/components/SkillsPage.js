@@ -14,12 +14,12 @@ function SkillsPage() {
     {
       category: "Frontend",
       icon: "🌐",
-      items: ["React", "Next.js", "TypeScript", "JavaScript", "HTML", "CSS", "Tailwind CSS", "Material UI", "Bootstrap"]
+      items: ["React", "Next.js", "TypeScript", "JavaScript", "HTML", "CSS", "Tailwind CSS", "Bootstrap"]
     },
     {
       category: "Backend",
       icon: "⚙️",
-      items: ["Node.js", "Express", "REST APIs", "MongoDB", "Authentication"]
+      items: ["Node.js", "Express", "REST APIs", "MongoDB", "Flask", "Authentication"]
     },
     {
       category: "Database",
@@ -34,12 +34,12 @@ function SkillsPage() {
         {
       category: "Data Analysis",
       icon: "📶",
-      items: ["Excel", "Tableau", "Power BI", "Predictive Modeling", "Statistical Analysis", "EDA", "Data Cleaning & Preprocessing"]
+      items: ["Excel", "Tableau", "Power BI", "ML Modeling", "Statistical Analysis", "EDA", "Data Prep", "Data Visualization", "Dashboarding"]
     },
     {
       category: "Website Operations",
       icon: "🚀",
-      items: ["SEO", "Performance Optimization", "Accessibility", "Web Security"]
+      items: ["Website Maintenance", "SEO", "Performance Optimization", "Accessibility", "Web Hosting", "A/B Testing"]
     },
     {
       category: "Other",
