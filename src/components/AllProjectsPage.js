@@ -11,7 +11,7 @@ const allProjectsData = [
     description: 'AI-powered skincare analysis and personalized recommendations.',
     techStack: ['Python', 'Machine learning', 'Keras', 'Eslint', 'Sci-kit', 'TensorFlow', 'React Js', 'MongoDB', 'Node Js', 'Express Js'],
     liveLink: '#',
-    codeLink: '#',
+    codeLink: 'https://github.com/vidhirawat10/Beautelligent',
     // Categories updated: removed 'ml' and 'web_app'
     categories: ['all', 'major'] 
   },
@@ -20,7 +20,7 @@ const allProjectsData = [
     description: 'Virtual fashion stylist with AI-driven outfit suggestions.',
     techStack: ['React Js', 'MongoDB', 'Node Js', 'Express Js', 'Redux'],
     liveLink: '#',
-    codeLink: '#',
+    codeLink: 'https://github.com/vidhirawat10/Drapevibes',
     // Categories updated: removed 'web_app' and 'ml'
     categories: ['all', 'major'] 
   },
@@ -29,7 +29,7 @@ const allProjectsData = [
     description: 'AI-based legal research and case law search platform.',
     techStack: ['React Js', 'MongoDB', 'Node Js', 'Express Js', 'Redux', 'OpenAI'],
     liveLink: '#',
-    codeLink: '#',
+    codeLink: 'https://github.com/vidhirawat10/Nyay-Search',
     // Categories updated: removed 'web_app' and 'ml'
     categories: ['all', 'major']
   },
@@ -38,7 +38,7 @@ const allProjectsData = [
       description: 'A comprehensive streaming platform UI with realistic Browse and playback features.',
       techStack: ['React', 'Node.js', 'MongoDB'],
       liveLink: '#',
-      codeLink: '#',
+      codeLink: 'https://github.com/vidhirawat10/Clone/tree/main/netflix%20clone',
       categories: ['all', 'web_app']
   },
   {
@@ -46,7 +46,7 @@ const allProjectsData = [
       description: 'A web platform for Browse, purchasing, and reading e-books online.',
       techStack: ['HTML', 'CSS', 'JS'],
       liveLink: '#',
-      codeLink: '#',
+      codeLink: 'https://github.com/vidhirawat10/Online-Book-Store',
       categories: ['all', 'web_app']
   },
   {
