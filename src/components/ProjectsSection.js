@@ -14,21 +14,21 @@ function ProjectsSection() {
       description: 'AI-powered skincare analysis and personalized recommendations.',
       techStack: ['Python', 'Machine learning', 'Keras', 'Eslint', 'Sci-kit', 'TensorFlow', 'React Js', 'MongoDB', 'Node Js', 'Express Js'],
       liveLink: '#', // Replace with actual live project link
-      codeLink: '#'   // Replace with actual GitHub/code repository link
+      codeLink: 'https://github.com/vidhirawat10/Beautelligent'   // Replace with actual GitHub/code repository link
     },
     {
       title: 'DrapeVibe',
       description: 'Virtual fashion stylist with AI-driven outfit suggestions.',
       techStack: ['React Js', 'MongoDB', 'Node Js', 'Express Js', 'Redux'],
       liveLink: '#',
-      codeLink: '#'
+      codeLink: 'https://github.com/vidhirawat10/Drapevibes'
     },
     {
       title: 'Nyay Search',
       description: 'AI-based legal research and case law search platform.',
       techStack: ['React Js', 'MongoDB', 'Node Js', 'Express Js', 'Redux', 'OpenAI'],
       liveLink: '#',
-      codeLink: '#'
+      codeLink: 'https://github.com/vidhirawat10/Nyay-Search'
     },
     // No more projects here, they are managed in AllProjectsPage
   ];
