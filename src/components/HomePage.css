@@ -7,7 +7,9 @@
   overflow: hidden;
 }
 
-/* Styles for the stars canvas background */
+/* Styles for the stars canvas background (This ID is likely from a previous global stars implementation,
+   but since FallingStars is now inside right-section, this might be redundant or for a different purpose.
+   Keeping it as is for now, but note it's not directly related to the FallingStars component within right-section). */
 #stars {
   position: fixed;
   top: 0;
@@ -16,17 +18,17 @@
   height: 100vh;
   z-index: -1;
   pointer-events: none;
-  background-color: #0a151f;
+  background-color: #0a151f; /* This background will be overridden by .homepage-main's children */
 }
 
 /* Container for the two main sections (left and right) */
 .homepage-sections {
   display: flex;
   width: 100%;
-  height: 100vh;
-  position: relative; /* Important for absolute positioning of .dot-grid */
+  height: 100vh; /* Keep full viewport height */
+  position: relative;
   z-index: 1;
-  flex-direction: row; /* Keep left and right sections side-by-side */
+  flex-direction: row; /* ALWAYS Keep left and right sections side-by-side */
 }
 
 /* Styling for the left section */
@@ -34,12 +36,13 @@
   flex: 1;
   background-color: #1a1a2e;
   display: flex;
-  flex-direction: column; /* Changed to column to stack content */
+  flex-direction: column; /* Stack content vertically */
   justify-content: center; /* Center content vertically */
   align-items: center; /* Center content horizontally */
-  position: relative; /* Needed for absolute positioning of children if any, or for z-index context */
-  padding: 20px; /* Add some padding to prevent content from touching edges */
+  position: relative; /* Needed for absolute positioning of logo */
+  padding: 20px; /* Add some padding */
   overflow: hidden; /* Important for absolute positioning of content within */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
 }
 
 /* Styling for the right section */
@@ -47,11 +50,25 @@
   flex: 1;
   background-color: #0a151f;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  justify-content: center; /* Center social navbar */
+  align-items: center; /* Center social navbar */
   padding: 20px;
-  position: relative; /* ADD THIS LINE: Crucial for absolute positioning of stars */
+  position: relative; /* Crucial for absolute positioning of FallingStars */
+  overflow: hidden; /* Important to clip stars if they go beyond this section */
 }
+
+/* Styles for the FallingStars component to fill its parent (right-section) */
+.right-section > .FallingStars-container,
+.right-section canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Place stars behind other content like SocialNavbar */
+  pointer-events: none; /* Allows clicks to pass through to elements below if any */
+}
+
 
 /* Styles for the logo */
 .homepage-logo {
@@ -64,7 +81,7 @@
   padding: 0;
   display: flex;
   align-items: center;
-  z-index: 10; /* Ensures logo is above the dot grid */
+  z-index: 10; /* Ensures logo is above content */
 }
 
 .homepage-logo .logo-name {
@@ -80,11 +97,11 @@
   color: #92e0be;
 }
 
-/* --- Media Queries for Responsive Logo Font Size (from previous iteration, still relevant) --- */
+/* --- Media Queries for Responsive Logo (No stacking of homepage-sections) --- */
 
 @media (max-width: 1024px) {
   .homepage-logo {
-    font-size: 1.8em;
+    font-size: 1.3em;
     top: 15px;
     left: 15px;
   }
@@ -92,20 +109,57 @@
 
 @media (max-width: 768px) {
   .homepage-logo {
-    font-size: 1.5em;
+    font-size: 1.1em;
     top: 10px;
     left: 10px;
   }
-  /* Ensure main sections are still side-by-side */
+  /* Keep side-by-side */
   .homepage-sections {
-    flex-direction: row; /* Explicitly keep them side-by-side */
+    flex-direction: row; /* Explicitly ensure row direction */
+  }
+  .left-section, .right-section {
+    padding: 10px; /* Reduce padding to save space */
+  }
+  /* Adjustments for SocialNavbar on smaller screens if side-by-side */
+  .social-navbar {
+    padding: 10px; /* Add padding if necessary */
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) { /* Mobile phones */
   .homepage-logo {
-    font-size: 1.1em;
+    font-size: 0.9em; /* Even smaller logo */
     top: 5px;
     left: 5px;
+  }
+  /* Keep side-by-side, but make sections take equal width */
+  .left-section, .right-section {
+    flex: 1; /* Ensure they still share space equally */
+    padding: 5px; /* Aggressive padding reduction */
+    min-width: 150px; /* Prevent shrinking too much, adjust as needed */
+  }
+
+  /* SocialNavbar needs more attention here to stack its items */
+  .social-navbar {
+    display: flex;
+    flex-direction: column; /* Stack icons vertically */
+    gap: 8px; /* Reduce space between icons */
+    padding: 5px; /* Reduced padding */
+  }
+}
+
+/* Specific adjustments for very small mobile screens */
+@media (max-width: 375px) {
+  .homepage-logo {
+    font-size: 0.8em;
+    top: 3px;
+    left: 3px;
+  }
+  .left-section, .right-section {
+    padding: 3px; /* Minimal padding */
+    min-width: 130px; /* Further restrict shrinking */
+  }
+  .social-navbar {
+    gap: 5px; /* Even less space for icons */
   }
 }
