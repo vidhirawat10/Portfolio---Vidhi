@@ -128,9 +128,9 @@
 
 @media (max-width: 576px) { /* Mobile phones */
   .homepage-logo {
-    font-size: 0.9em; /* Even smaller logo */
-    top: 5px;
-    left: 5px;
+    font-size: 1em; /* Even smaller logo */
+    top: 20px;
+    left: 20px;
   }
   /* Keep side-by-side, but make sections take equal width */
   .left-section, .right-section {
