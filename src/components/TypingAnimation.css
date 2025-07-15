@@ -4,13 +4,13 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* Align content to the left within the container */
-  justify-content: center;
+  justify-content: center; /* Vertically center content */
   text-align: left; /* Ensure text aligns left */
-  max-width: 600px; /* Limit width for better readability */
+  width: 100%; /* Use full width of its parent */
+  max-width: 600px; /* Limit width for better readability on large screens */
   padding: 5px; /* Add some padding */
   box-sizing: border-box; /* Include padding in element's total width and height */
-  position: relative; /* For diagonal lines positioning */
-  height: 100%; /* Ensure it takes full height of left-section for vertical centering */
+  position: relative; /* For diagonal lines and bottom text positioning */
 }
 
 .typing-text {
@@ -20,6 +20,8 @@
   margin-bottom: 20px;
   line-height: 1.1; /* Adjust line height for better spacing */
   font-weight: bold;
+  word-break: break-word; /* Ensure long words break */
+  overflow-wrap: break-word; /* For wider browser support */
 }
 
 .typed-word {
@@ -57,6 +59,7 @@
   transition: background-color 0.3s ease, transform 0.3s ease;
   margin-top: 30px;
   margin-bottom: 120px; /* Increased bottom margin */
+  white-space: nowrap; /* Prevent button text from wrapping */
 }
 
 .resume-button:hover {
@@ -68,9 +71,8 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  /* Removed margin-top: auto; here as it conflicts with absolute positioning and is handled by 'bottom' */
   position: absolute; /* Position relative to typing-container */
-  bottom: 20px; /* Distance from the bottom of the left-section */
+  bottom: 20px; /* Distance from the bottom of the typing-container */
   left: 0;
   padding: 0 5px; /* Match container padding, but ensure it's not 0px */
   box-sizing: border-box;
@@ -81,16 +83,15 @@
   color: rgba(255, 255, 255, 0.7); /* Slightly faded white */
   line-height: 1.4;
   flex: 1; /* Allow them to take equal space */
+  padding: 0 5px; /* Add internal padding to texts */
 }
 
 .bottom-text.left-align {
   text-align: left;
-  padding-right: 15px; /* Space between the two texts */
 }
 
 .bottom-text.right-align {
   text-align: right;
-  padding-left: 5px; /* Space between the two texts */
 }
 
 .diagonal-lines {
@@ -103,11 +104,12 @@
   color: #d4ff52; /* Color of the lines */
   font-size: 2em; /* Size of the slashes */
   font-weight: bold;
+  z-index: -1; /* Place behind text if it overlaps */
 }
 
-/* --- Responsive adjustments --- */
+/* --- Responsive adjustments for TypingAnimation.css --- */
 
-/* For screens wider than 1200px (e.g., very large monitors) */
+/* For screens wider than 1600px (very large monitors) */
 @media (min-width: 1600px) {
   .typing-text {
     font-size: 5.5em; /* Even larger for very big screens */
@@ -118,115 +120,131 @@
 @media (max-width: 1200px) {
   .typing-text {
     font-size: 4em; /* Slightly smaller */
-    margin-top: 20px;
+    margin-top: 60px; /* Adjusted */
   }
   .typing-description {
     font-size: 1.15em;
   }
   .resume-button {
-    margin-bottom: 100px;
+    margin-bottom: 100px; /* Adjusted */
   }
   .diagonal-lines {
-    bottom: 120px;
+    bottom: 110px; /* Adjusted */
     right: -30px;
   }
 }
 
-/* For screens between 992px and 768px (e.g., typical tablets in landscape) */
+/* For screens between 992px and 768px (typical tablets in landscape) */
 @media (max-width: 992px) {
+  .typing-container {
+    padding: 10px; /* Adjusted container padding */
+    max-width: 95%; /* Allow more width for content */
+  }
   .typing-text {
     font-size: 3.2em; /* Adjusted to fit better */
-    margin-top: 20px;
-    margin-bottom: 15px;
+    margin-top: 30px; /* Adjusted */
+    margin-bottom: 30px;
   }
   .typing-description {
-    font-size: 1em; /* Smaller description */
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  .resume-button {
-    padding: 10px 20px;
-    font-size: 1em;
-    margin-top: 20px;
-    margin-bottom: 80px;
-  }
-  .bottom-text {
-    font-size: 0.9em; /* Smaller bottom text */
-  }
-  .diagonal-lines {
-    bottom: 100px;
-    right: -10px; /* Bring it slightly closer */
-    font-size: 1.8em;
-  }
-  .typing-container {
-    padding: 10px; /* Increased container padding for smaller screens */
-  }
-}
-
-/* For screens between 768px and 576px (e.g., tablets in portrait, large phones) */
-@media (max-width: 768px) {
-  .typing-container {
-    max-width: 100%; /* Allow full width */
-    padding: 15px;
-    /* Keeping align-items: flex-start and text-align: left here */
-    /* If you want to center the content here, change to: */
-    /* align-items: center; */
-    /* text-align: center; */
-  }
-  .typing-text {
-    font-size: 2.5em; /* Further reduced */
-    margin-top: 20px;
-    margin-bottom: 10px;
-  }
-  .typing-description {
-    font-size: 0.95em;
+    font-size: 0.95em; /* Smaller description */
     margin-top: 15px;
     margin-bottom: 15px;
   }
   .resume-button {
-    margin-bottom: 50px;
-  }
-  .bottom-text-container {
-    flex-direction: column; /* Stack bottom texts */
-    align-items: flex-start; /* Keep them left-aligned when stacked */
-    bottom: 10px; /* Adjust position */
-    padding: 0 15px; /* Adjust padding for stacked texts */
+    padding: 8px 18px;
+    font-size: 0.9em;
+    margin-top: 20px;
+    margin-bottom: 150px; /* Adjusted */
   }
   .bottom-text {
-    text-align: left !important; /* Force left align when stacked */
-    padding-right: 0;
-    padding-left: 0;
-    margin-bottom: 8px; /* Space between stacked texts */
+    font-size: 0.85em; /* Smaller bottom text */
+  }
+  .bottom-text.left-align{
+    text-align: left;
+  }
+  .bottom-text.right-align{
+    text-align: left;
   }
   .diagonal-lines {
-    bottom: 70px; /* Adjust position for smaller screens */
-    right: 5px;
-    font-size: 1.2em;
+    bottom: 90px; /* Adjusted */
+    right: -10px; /* Bring it slightly closer */
+    font-size: 1.5em; /* Smaller slashes */
   }
 }
 
-/* For screens smaller than 576px (e.g., most mobile phones) */
-@media (max-width: 576px) {
+/* For screens between 768px and 576px (tablets in portrait, large phones) */
+@media (max-width: 768px) {
+  .typing-container {
+    padding: 10px; /* Adjusted padding for very narrow space */
+    /* text-align: center; Removed for now, keeping left aligned */
+  }
   .typing-text {
-    font-size: 1.8em; /* Even smaller font */
-    margin-top: 20px;
+    font-size: 2.8em; /* Significantly reduced */
+    margin-top: -20px;
+    margin-bottom: 10px;
   }
   .typing-description {
-    font-size: 0.85em;
+    font-size: 0.8em; /* Reduced */
+    margin-top: 20px;
+    margin-bottom: 10px;
   }
   .resume-button {
-    padding: 8px 18px;
-    font-size: 0.9em;
-    margin-bottom: 40px;
+    padding: 6px 15px;
+    font-size: 1.3em;
+    margin-bottom: 130px; /* Reduced */
+  }
+  .bottom-text-container {
+    flex-direction: column; /* Stack bottom texts vertically */
+    bottom: 10px; /* Keep it at the bottom of the container */
+    padding: 0 5px; /* Minimal horizontal padding */
+  }
+  .bottom-text {
+    font-size: 0.75em; /* Reduced */
+    text-align: left !important; /* Keep left-aligned even when stacked */
+    padding: 0; /* Remove internal padding if stacking */
+    margin-bottom: 5px; /* Space between stacked texts */
   }
   .diagonal-lines {
-    display: none; /* Hide diagonal lines on very small screens if they crowd the content */
+    display: none; /* Hide diagonal lines on these smaller screens */
+  }
+}
+
+/* For screens smaller than 576px (most mobile phones) */
+@media (max-width: 576px) {
+  .typing-container {
+    padding: 5px; /* Very minimal padding */
+  }
+  .typing-text {
+    font-size: 2.0em; /* Even smaller font */
+    margin-top: -40px;
+  }
+  .typing-description {
+    font-size: 0.7em; /* Smallest description font */
+  }
+  .resume-button {
+    padding: 5px 10px;
+    font-size: 1.5em;
+    margin-bottom: 180px;
+  }
+  .bottom-text-container {
+    bottom: 5px; /* Closer to the bottom */
+  }
+  .bottom-text {
+    font-size: 0.65em; /* Smallest bottom text font */
+    margin-bottom: 3px;
   }
 }
 
 /* Specific adjustment for very small screens if necessary */
 @media (max-width: 375px) {
   .typing-text {
-    font-size: 1.5em;
+    font-size: 2.2em;
+  }
+  .typing-description {
+    font-size: 0.65em;
+  }
+  .resume-button {
+    font-size: 0.65em;
+    padding: 4px 8px;
   }
 }
